@@ -1,6 +1,6 @@
 const pokemonListHtml = document.getElementById('pokemonListHtml');
 const loadMoreBtn = document.getElementById('loadMoreBtn');
-
+const pokemonDetailPage = document.getElementById('pokemonName');
 const maxPokemonsShown = 151;
 const limit = 10;
 let offset = 0;
@@ -32,6 +32,14 @@ function loadPokemonsList(offset, limit) {
     });
 }
 
+// Function to load Pokemon details for the detail page
+function loadPokemonDetails(pokemon) {
+    PokeAPI.getPokemonDetails(pokemon).then((pokemon) => {
+        pokemonDetailPage.innerHTML = `${pokemon.name}`
+    })
+}
+
+
 // First load Pokémon list
 loadPokemonsList(offset, limit);
 
@@ -49,4 +57,8 @@ loadMoreBtn.addEventListener('click', () => {
     } else {
         loadPokemonsList(offset, limit);
     }
+})
+
+pokemonDetailPage.addEventListener('click', () => {
+    console.log('clicked on detail page')
 })
