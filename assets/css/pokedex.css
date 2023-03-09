@@ -1,0 +1,115 @@
+.content {
+    background-image: url('../images/content-bg.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 10rem;
+}
+
+.pokedex-logo {
+    height: 4.5rem;
+    margin-bottom: 10px;
+}
+
+.pokemons {
+    display: grid;
+    grid-template-columns: 1fr;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pokemons a {
+    display: grid;
+}
+
+.pokemon {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-image: url('../images/pokemon-card-bg.png');
+    background-repeat: no-repeat;
+    background-size: 7rem;
+    background-position: bottom right;
+    overflow: hidden;
+}
+
+.pokemon .number {
+    opacity: .3;
+    text-align: right;
+    font-size: .625rem;
+}
+
+.pokemon .name {
+    margin: .25rem 0;
+    text-transform: capitalize;
+    color: white;
+}
+
+.pokemon .detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pokemon .detail .types {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pokemon .detail .types .type {
+    margin: .25rem 0;
+    padding: .25rem .5rem;
+    border-radius: 1rem;
+    font-size: .625rem;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #FFFFFF4D;
+    color: white;
+}
+
+.pokemon img {
+    max-width: 100%;
+    height: 70px;
+    align-self: flex-end;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.pagination button {
+    border: none;
+    border-radius: 1rem;
+    margin: .25rem 0;
+    padding: .5rem 1rem;
+    font-size: .825rem;
+    background-color: #6C79DB;
+    color: white;
+}
+
+@media screen and (min-width: 380px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

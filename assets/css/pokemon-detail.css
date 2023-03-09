@@ -1,0 +1,126 @@
+.content {
+    background-image: none;
+}
+
+.mod-background {
+    background-image: url('../images/pokemon-card-bg.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 22rem;
+}
+
+.navbar {
+    height: auto;
+    padding: .5rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: .5rem;
+    color: white;
+}
+
+.pokemon-info {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.pokemon-info .number {
+    opacity: .3;
+    text-align: right;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.pokemon-info .name {
+    font-size: 3rem;
+    text-transform: capitalize;
+    color: white;
+}
+
+.pokemon-info .detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.pokemon-info .detail .types {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.pokemon-info .detail .types .type {
+    margin: 0 .25rem;
+    padding: .25rem .5rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #FFFFFF4D;
+    color: white;
+}
+
+.pokemon-info .detail img {
+    max-height: 20rem;
+    margin: 0;
+    width: 50%;
+    align-self: flex-end;
+}
+
+.pokemon-detail {
+    border-radius: 1rem 1rem 0 0;
+}
+
+.pokemon-stats h2 {
+    border-bottom: .2rem solid #F4F4F4;
+    margin-top: 2rem;
+}
+
+.pokemon-stats .pokemon-stats-list {
+    list-style: none;
+    padding: 0;
+    margin-left: 0;
+    max-width: 300px;
+}
+
+.pokemon-stats .pokemon-stats-list .stat {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.pokemon-stats .pokemon-stats-list .stat .stat-name {
+    color: #CCCCCC;
+    text-transform: capitalize;
+}
+
+@media screen and (min-width: 420px) {
+    .mod-background {
+        background-size: 25rem;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .mod-background {
+        background-size: 35rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .pokemon-info {
+        max-width: 900px;
+    }
+
+    .mod-pokemon-detail {
+        background-color: #F4F4F4;
+    }
+
+    .pokemon-detail {
+        border-radius: 1rem;
+        height: auto;
+    }
+}
