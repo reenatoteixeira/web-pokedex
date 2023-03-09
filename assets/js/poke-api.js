@@ -13,6 +13,18 @@ function convertPokemonModel(pokeApiPokemon) {
     pokemon.types = types;
     pokemon.mainType = mainType;
     pokemon.picture = pokeApiPokemon.sprites.other.dream_world.front_default;
+    pokemon.abilities = pokeApiPokemon.abilities.map((abilitieSlot) => abilitieSlot.ability.name);
+    pokemon.height = pokeApiPokemon.height;
+    pokemon.weight = pokeApiPokemon.weight;
+    pokemon.stats['health'] = pokeApiPokemon.stats[0].base_stat;
+    pokemon.stats['attack'] = pokeApiPokemon.stats[1].base_stat;
+    pokemon.stats['defense'] = pokeApiPokemon.stats[2].base_stat;
+    pokemon.stats['spAttack'] = pokeApiPokemon.stats[3].base_stat;
+    pokemon.stats['spDefense'] = pokeApiPokemon.stats[4].base_stat;
+    pokemon.stats['speed'] = pokeApiPokemon.stats[5].base_stat;
+    pokemon.stats['total'] = pokemon.stats['health'] + pokemon.stats['attack'] +
+    pokemon.stats['defense'] + pokemon.stats['spAttack'] +
+    pokemon.stats['spDefense'] + pokemon.stats['speed']
 
     return pokemon;
 }
