@@ -23,14 +23,14 @@ function convertPokemonModel(pokeApiPokemon) {
     pokemon.stats['spDefense'] = pokeApiPokemon.stats[4].base_stat;
     pokemon.stats['speed'] = pokeApiPokemon.stats[5].base_stat;
     pokemon.stats['total'] = pokemon.stats['health'] + pokemon.stats['attack'] +
-    pokemon.stats['defense'] + pokemon.stats['spAttack'] +
-    pokemon.stats['spDefense'] + pokemon.stats['speed']
+        pokemon.stats['defense'] + pokemon.stats['spAttack'] +
+        pokemon.stats['spDefense'] + pokemon.stats['speed']
 
     return pokemon;
 }
 
 // Create method to retrieve the Pokémon details list from the PokeAPI and convert it to our Pokémon model (pokemon-model.js)
-PokeAPI.getPokemonDetailsList = (pokemon) => {
+PokeAPI.getPokemonInfosList = (pokemon) => {
     return fetch(pokemon.url)
         .then((response) => response.json())
         .then(convertPokemonModel);
@@ -44,7 +44,7 @@ PokeAPI.getPokemonList = (offset = 0, limit = 10) => {
     return fetch(url)
         .then((response) => response.json()) // Capture the response body and convert it to json
         .then((jsonBody) => jsonBody.results) // Return only the 'results' section (Pokémons list) from the response body json
-        .then((pokemonsList) => pokemonsList.map(PokeAPI.getPokemonDetailsList)) // Return one request for each Pokémon on the Pokémons list
+        .then((pokemonsList) => pokemonsList.map(PokeAPI.getPokemonInfosList)) // Return one request for each Pokémon on the Pokémons list
         .then((pokemonDetailsListRequests) => Promise.all(pokemonDetailsListRequests)) // Multiple request each Pokémon details list
         .then((pokemonDetailsList) => pokemonDetailsList) // Return all the Pokémon details lists
         .catch((error) => console.error(error)); // If error, print the error in the console
