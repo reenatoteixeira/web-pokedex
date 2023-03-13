@@ -6,8 +6,13 @@
 }
 
 .pokedex-logo {
-    height: 4.5rem;
+    height: 5rem;
     margin-bottom: 10px;
+}
+
+.tip {
+    color: #00000038;
+    margin-left: 1rem;
 }
 
 .pokemons {
@@ -20,6 +25,8 @@
 
 .pokemons a {
     display: grid;
+    padding: 1em;
+    margin: -1em;
 }
 
 .pokemon {
@@ -93,7 +100,32 @@
     padding: .5rem 1rem;
     font-size: .825rem;
     background-color: #6C79DB;
+    cursor: pointer;
     color: white;
+}
+
+.pagination button:hover {
+    background-color: #646a99; /* Add a dark-grey background on hover */
+}
+
+#topBtn {
+    /* display: none; */
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #6C79DB;
+    color: white;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+}
+
+#topBtn:hover {
+    background-color: #646a99; /* Add a dark-grey background on hover */
 }
 
 @media screen and (min-width: 380px) {

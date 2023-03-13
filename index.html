@@ -27,6 +27,7 @@
 <body>
     <section class="content">
         <img src="./assets/images/pokedex-logo.png" alt="Pokédex logo" class="pokedex-logo">
+        <p class="tip">tip: click on any Pokémon to see its details or click on "Load more" to see more Pokémons.</p>
 
         <ol id="pokemonListHtml" class="pokemons">
             <!-- Pokemons here -->
@@ -35,8 +36,9 @@
         <div class="pagination">
             <button type="button" id="loadMoreBtn">Load more</button>
         </div>
-    </section>
 
+        <button onclick="topFunction()" id="topBtn" title="Go to top">⏏</button>
+    </section>
 
     <!-- Scripts -->
     <script src="./assets/js/pokemon-model.js"></script>

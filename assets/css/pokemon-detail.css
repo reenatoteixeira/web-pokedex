@@ -88,13 +88,17 @@
 
 .pokemon-stats .pokemon-stats-list .stat {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.5fr 2fr;
     align-items: center;
     margin: 1rem 0;
 }
 
 .pokemon-stats .pokemon-stats-list .stat .stat-name {
     color: #CCCCCC;
+    text-transform: capitalize;
+}
+
+.pokemon-stats .pokemon-stats-list .stat .stat-value {
     text-transform: capitalize;
 }
 

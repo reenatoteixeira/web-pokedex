@@ -1,7 +1,7 @@
 const pokemonListHtml = document.getElementById('pokemonListHtml');
 const loadMoreBtn = document.getElementById('loadMoreBtn');
 
-const maxPokemonsShown = 151;
+const maxPokemonsShown = 15;
 const limit = 10;
 let offset = 0;
 

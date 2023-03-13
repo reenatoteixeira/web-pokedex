@@ -2,8 +2,16 @@
     background-color: #A8B720d0;
 }
 
+.bug:hover {
+    background-color: #7d8819d0;
+}
+
 .dark {
     background-color: #725847d0;
+}
+
+.dark {
+    background-color: #503e32d0;
 }
 
 .dragon {
@@ -36,6 +44,10 @@
 
 .grass {
     background-color: #76c850d0;
+}
+
+.grass:hover {
+    background-color: #57963ad0;
 }
 
 .ground {
