@@ -14,8 +14,8 @@ function convertPokemonModel(pokeApiPokemon) {
     pokemon.mainType = mainType;
     pokemon.picture = pokeApiPokemon.sprites.other.dream_world.front_default;
     pokemon.abilities = pokeApiPokemon.abilities.map((abilitieSlot) => abilitieSlot.ability.name);
-    pokemon.height = pokeApiPokemon.height;
-    pokemon.weight = pokeApiPokemon.weight;
+    pokemon.height = (pokeApiPokemon.height * 10) / 100;
+    pokemon.weight = (pokeApiPokemon.weight * 100) / 1000;
     pokemon.stats['health'] = pokeApiPokemon.stats[0].base_stat;
     pokemon.stats['attack'] = pokeApiPokemon.stats[1].base_stat;
     pokemon.stats['defense'] = pokeApiPokemon.stats[2].base_stat;
@@ -48,4 +48,14 @@ PokeAPI.getPokemonList = (offset = 0, limit = 10) => {
         .then((pokemonDetailsListRequests) => Promise.all(pokemonDetailsListRequests)) // Multiple request each Pokémon details list
         .then((pokemonDetailsList) => pokemonDetailsList) // Return all the Pokémon details lists
         .catch((error) => console.error(error)); // If error, print the error in the console
+}
+
+PokeAPI.getPokemonDetails = (pokemonId) => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
+
+    return fetch(url)
+        .then((response) => response.json())
+        .then(convertPokemonModel)
+        .then((pokemon) => pokemon)
+        .catch((error) => console.error(error));
 }
