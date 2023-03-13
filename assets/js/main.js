@@ -15,7 +15,7 @@ function loadPokemonsList(offset, limit) {
         // Insert the new HTML Pokémon list into the HTML list using the .innerHTML function
         pokemonListHtml.innerHTML += pokemonsList.map((pokemon) => `
             <li class="pokemon ${pokemon.mainType}">
-                <a href="./detail.html">
+                <a href="./detail.html?id=${pokemon.id}">
                     <span class="number">#${pokemon.id}</span>
                     <span class="name">${pokemon.name}</span>
 
