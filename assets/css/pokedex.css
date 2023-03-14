@@ -42,6 +42,10 @@
     overflow: hidden;
 }
 
+.pokemon:hover {
+    filter: brightness(90%);
+}
+
 .pokemon .number {
     opacity: .3;
     text-align: right;
@@ -109,7 +113,7 @@
 }
 
 #topBtn {
-    /* display: none; */
+    display: none;
     position: fixed;
     bottom: 20px;
     right: 30px;

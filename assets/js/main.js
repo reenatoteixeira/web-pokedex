@@ -1,10 +1,24 @@
 const pokemonListHtml = document.getElementById('pokemonListHtml');
 const loadMoreBtn = document.getElementById('loadMoreBtn');
 
-const maxPokemonsShown = 15;
+const maxPokemonsShown = 151;
 const limit = 10;
 let offset = 0;
 
+let topButton = document.getElementById("topBtn");
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topButton.style.display = "block";
+    } else {
+        topButton.style.display = "none";
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 
 // Function to load the Pokémon list
 function loadPokemonsList(offset, limit) {
@@ -50,3 +64,5 @@ loadMoreBtn.addEventListener('click', () => {
         loadPokemonsList(offset, limit);
     }
 })
+
+window.onscroll = function () { scrollFunction() };
